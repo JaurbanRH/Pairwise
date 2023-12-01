@@ -1,0 +1,12 @@
+[dev-packages]
+mypy = "*"
+flake8= "*"
+pylint = "*"
+black="*"
+
+[packages]
+click = "*"
+pytest = "*"
+
+[scripts]
+pairwise = "python main/main.py"

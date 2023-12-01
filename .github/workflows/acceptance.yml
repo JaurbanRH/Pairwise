@@ -1,0 +1,23 @@
+name: Acceptance
+on:
+  push:
+  pull_request:
+    branches: [ "master" ]
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup Python
+        id: setup-python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+      - name: Install pipenv
+        run: pip install pipenv
+      - name: Install dependencies
+        run: pipenv install -d
+      - name: Run acceptance check
+        run: make -k acceptance
+      - name: Run tests
+        run: make test

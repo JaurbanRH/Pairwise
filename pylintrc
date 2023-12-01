@@ -1,0 +1,5 @@
+[FORMAT]
+max-line-length=120
+
+[MESSAGE CONTROL]
+disable=E0401, W0621
